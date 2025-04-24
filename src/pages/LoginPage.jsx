@@ -28,12 +28,14 @@ const LoginPage = () => {
     return (
         <Box
             sx={{
-                backgroundColor: '#172744',
+                // backgroundColor: '#172744',
+                background: 'linear-gradient(to bottom, #142d4c, #113f67, #38598b, #455d7a)',
                 minHeight: '100vh',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
             }}
+
         >
             <Container maxWidth="xs">
                 <Paper elevation={6} sx={{ p: 4, borderRadius: 3, width: '100%' }}>
@@ -80,7 +82,7 @@ const LoginPage = () => {
                             variant="contained"
                             sx={{
                                 mt: 3,
-                                backgroundColor: '#172744',
+                                backgroundColor: '#142d4c',
                                 '&:hover': {
                                     backgroundColor: '#0f1b30',
                                 },
