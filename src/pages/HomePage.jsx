@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Globe from "../assets/globe2.png";
 
 function HomePage() {
-    // const [userName, setUserName] = useState("");
+    const [userName, setUserName] = useState("");
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("user"));
