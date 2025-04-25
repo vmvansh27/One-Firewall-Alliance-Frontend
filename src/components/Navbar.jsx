@@ -118,6 +118,7 @@ import {
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Dropdown = ({ title, items }) => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -217,7 +218,9 @@ const Navbar = () => {
                     {user && (
                         <Box sx={{ ml: 2 }}>
                             <Button color="inherit" onClick={handleLogout}>
-                                Logout
+                                <Button color="inherit" onClick={handleLogout}>
+                                    <LogoutIcon></LogoutIcon>
+                                </Button>
                             </Button>
                         </Box>
                     )}
