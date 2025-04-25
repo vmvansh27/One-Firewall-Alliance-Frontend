@@ -112,7 +112,8 @@ import {
     Button,
     Menu,
     MenuItem,
-    Box
+    Box,
+    Typography
 } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Link, useNavigate } from "react-router-dom";
@@ -165,8 +166,10 @@ const Navbar = () => {
         <AppBar position="static" sx={{ backgroundColor: "#172744", color: "#e8e8e8", py: 2 }}>
             <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 {/* Logo on the left */}
-                <img src={Logo} alt="logo" height="40" />
-
+                <Box sx={{ display: "flex", gap: "8px" }}>
+                    <img src={Logo} alt="logo" height="40" />
+                    <Typography style={{ marginTop: "8px", color: "#e8e8e8" }} >India</Typography>
+                </Box>
                 {/* Center nav items */}
                 <Box sx={{ display: "flex", gap: "1rem" }}>
                     <Dropdown

@@ -31,7 +31,7 @@ function HomePage() {
                 gap: 10,
             }}>
                 <Box p={3} m={15}>
-                    <Typography variant="h4" style={{
+                    <Typography variant="h3" style={{
                         background: 'linear-gradient(to right, #a2a8d3, #e7eaf6)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
@@ -40,7 +40,7 @@ function HomePage() {
                         {/* Welcome {userName} */}
                         Actionable Threat
                     </Typography>
-                    <Typography variant="h4" style={{
+                    <Typography variant="h3" style={{
                         background: 'linear-gradient(to right, #a2a8d3, #e7eaf6)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
@@ -48,7 +48,7 @@ function HomePage() {
                     }} gutterBottom>
                         Intelligence for
                     </Typography>
-                    <Typography variant="h4" style={{
+                    <Typography variant="h3" style={{
                         background: 'linear-gradient(to right, #a2a8d3, #e7eaf6)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
