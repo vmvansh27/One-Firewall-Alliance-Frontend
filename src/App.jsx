@@ -5,6 +5,7 @@ import ViewRegisteredDeals from "./pages/ViewRegisteredDeals"; // your existing 
 import RegisterDeal from "./pages/RegisterDeal"; // your existing page
 import HomePage from "./pages/HomePage"
 import DealDetails from "./pages/DealDetails";
+import WhyChooseUs from "./pages/WhyChooseUs";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/home" element={<HomePage />} />
       <Route path="/deals" element={<ViewRegisteredDeals />} />
       <Route path="/deals/:id" element={<DealDetails />} />
+      <Route path="/whychooseus" element={<WhyChooseUs />} />
     </Routes>
   );
 }
