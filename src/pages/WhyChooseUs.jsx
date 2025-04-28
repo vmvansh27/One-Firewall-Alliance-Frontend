@@ -1,3 +1,59 @@
+// import React from 'react';
+// import { Box, Button, Typography } from '@mui/material';
+// import { Link } from 'react-router-dom';
+
+// export default function WhyChooseUs() {
+//     return (
+//         <Box sx={{ minHeight: '100vh', backgroundColor: '#1a202c', color: 'white', padding: '32px' }}>
+//             <Box sx={{ maxWidth: '1024px', margin: '0 auto' }}>
+//                 <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '24px' }}>
+//                     <Link to="/home" className="text-white text-lg hover:text-gray-300 mr-4">
+//                         &#8592; Back
+//                     </Link>
+//                     <Typography variant="h3" sx={{ fontWeight: 'bold' }}>Why Choose OneFirewall</Typography>
+//                 </Box>
+
+//                 <Box sx={{ backgroundColor: '#ffffff1a', backdropFilter: 'blur(10px)', borderColor: 'rgba(255, 255, 255, 0.2)', borderWidth: '1px', padding: '24px', borderRadius: '8px', marginBottom: '24px' }}>
+//                     <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '16px' }}>Introduction</Typography>
+//                     <Typography variant="body1" sx={{ marginBottom: '16px' }}>
+//                         OneFirewall Alliance is the only threat intelligence provider in India with direct real-time integration at the
+//                         firewall level, enabling proactive threat blocking. Unlike global competitors who integrate primarily with
+//                         SIEM/XDR, OneFirewall supports multi-vendor intelligence sharing across firewalls, SIEMs, and XDRs,
+//                         making it the most vendor-agnostic and cost-effective solution.
+//                     </Typography>
+//                 </Box>
+
+//                 <Box sx={{ backgroundColor: '#ffffff1a', backdropFilter: 'blur(10px)', borderColor: 'rgba(255, 255, 255, 0.2)', borderWidth: '1px', padding: '24px', borderRadius: '8px', marginBottom: '24px' }}>
+//                     <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '16px' }}>Why OneFirewall Stands Out</Typography>
+//                     <ul className="list-disc pl-6 space-y-2">
+//                         <li>Direct real-time integration with firewalls for active threat blocking</li>
+//                         <li>Multi-vendor support across firewalls, SIEMs, and XDRs</li>
+//                         <li>Focused on Indian market threat landscape</li>
+//                         <li>Highly cost-effective without SIEM/XDR dependencies</li>
+//                     </ul>
+//                 </Box>
+
+//                 <Box sx={{ backgroundColor: '#ffffff1a', backdropFilter: 'blur(10px)', borderColor: 'rgba(255, 255, 255, 0.2)', borderWidth: '1px', padding: '24px', borderRadius: '8px', marginBottom: '24px' }}>
+//                     <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '16px' }}>Comparison with Global Providers</Typography>
+//                     <img
+//                         src="/mnt/data/7fc4bb1f-30d5-41c5-9ced-f6797db95650.png"
+//                         alt="Comparison Table"
+//                         className="w-full rounded-lg shadow-md"
+//                     />
+//                 </Box>
+
+//                 <Box sx={{ backgroundColor: '#ffffff1a', backdropFilter: 'blur(10px)', borderColor: 'rgba(255, 255, 255, 0.2)', borderWidth: '1px', padding: '24px', borderRadius: '8px' }}>
+//                     <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '16px' }}>Conclusion</Typography>
+//                     <Typography variant="body1">
+//                         For businesses and MSSPs seeking a proactive security solution without expensive SIEM/XDR dependencies,
+//                         OneFirewall is the only vendor in India offering real-time, multi-vendor firewall-based threat intelligence
+//                         sharing. OneFirewall is the smart choice for modern cybersecurity needs.
+//                     </Typography>
+//                 </Box>
+//             </Box>
+//         </Box>
+//     );
+// }
 
 
 import React from "react";

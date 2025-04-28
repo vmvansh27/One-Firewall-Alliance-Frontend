@@ -1,11 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
-import ViewRegisteredDeals from "./pages/ViewRegisteredDeals"; // your existing page
-import RegisterDeal from "./pages/RegisterDeal"; // your existing page
-import HomePage from "./pages/HomePage"
+import ViewRegisteredDeals from "./pages/ViewRegisteredDeals";
+import RegisterDeal from "./pages/RegisterDeal";
+import HomePage from "./pages/HomePage";
 import DealDetails from "./pages/DealDetails";
 import WhyChooseUs from "./pages/WhyChooseUs";
+import ProductsServices from "./pages/ProductsServices";
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
       <Route path="/deals" element={<ViewRegisteredDeals />} />
       <Route path="/deals/:id" element={<DealDetails />} />
       <Route path="/whychooseus" element={<WhyChooseUs />} />
+      <Route path="/productsServices" element={<ProductsServices />} />
     </Routes>
   );
 }

@@ -78,33 +78,40 @@ const Navbar = () => {
                             { label: "Benefits", to: "/program/benefits" },
                         ]}
                     /> */}
-                    <Dropdown
+                    {/* <Dropdown
                         title="Why Choose Us"
                         items={[
                             { label: "comparison", to: "/whychooseus" }
                         ]}
-                    />
-                    <Dropdown
+                    /> */}
+                    <Button component={Link} to="/whychooseus" color="inherit">
+                        Why Choose Us
+                    </Button>
+
+                    {/* <Dropdown
                         title="Sales"
                         items={[
                             { label: "Sales Toolkit", to: "/sales/toolkit" },
                             { label: "Pipeline", to: "/sales/pipeline" },
                         ]}
-                    />
-                    <Dropdown
+                    /> */}
+                    <Button component={Link} to="/productsServices" color="inherit">
+                        Products & Services
+                    </Button>
+                    {/* <Dropdown
                         title="Marketing"
                         items={[
                             { label: "Campaigns", to: "/marketing/campaigns" },
                             { label: "Resources", to: "/marketing/resources" },
                         ]}
-                    />
-                    <Dropdown
+                    /> */}
+                    {/* <Dropdown
                         title="Technical"
                         items={[
                             { label: "Docs", to: "/technical/docs" },
                             { label: "Support", to: "/technical/support" },
                         ]}
-                    />
+                    /> */}
                     <Dropdown
                         title="Opps and Leads"
                         items={[
