@@ -231,6 +231,7 @@ export default function ProductsAndServices() {
                                 "&:hover": {
                                     transform: "translateY(-8px)",
                                     borderColor: "#455d7a",
+                                    background: 'linear-gradient(to bottom, #040404, #113f67, #455d7a)',
                                 },
                                 // borderRadius: 3,
                                 backgroundColor: "rgba(255, 255, 255, 0.05)",
@@ -255,7 +256,7 @@ export default function ProductsAndServices() {
                                 </Typography>
                             </Box>
 
-                            <Link
+                            {/* <Link
                                 href="#"
                                 underline="none"
                                 sx={{
@@ -265,12 +266,14 @@ export default function ProductsAndServices() {
                                     fontWeight: "bold",
                                     mt: 2,
                                     "&:hover": {
-                                        textDecoration: "underline",
+                                        textDecoration: "none",
+                                        color: "black"
+
                                     },
                                 }}
                             >
                                 Read More&nbsp; <ArrowForwardIcon sx={{ fontSize: 18 }} />
-                            </Link>
+                            </Link> */}
                         </Paper>
                     </Grid>
                 ))}
