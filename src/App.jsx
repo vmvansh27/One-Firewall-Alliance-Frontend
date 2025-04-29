@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import DealDetails from "./pages/DealDetails";
 import WhyChooseUs from "./pages/WhyChooseUs";
 import ProductsServices from "./pages/ProductsServices";
+import Technology from "./pages/Technology";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/deals/:id" element={<DealDetails />} />
       <Route path="/whychooseus" element={<WhyChooseUs />} />
       <Route path="/productsServices" element={<ProductsServices />} />
+      <Route path="/technology" element={<Technology />} />
     </Routes>
   );
 }

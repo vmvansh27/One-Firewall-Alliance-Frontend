@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
     AppBar,
@@ -7,14 +6,19 @@ import {
     Menu,
     MenuItem,
     Box,
-    Typography
+    Typography,
+    IconButton,
+    Drawer,
+    List,
+    ListItem,
+    ListItemText,
+    Divider
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import LogoutIcon from '@mui/icons-material/Logout';
-
-
 
 const Dropdown = ({ title, items }) => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -50,6 +54,7 @@ const Dropdown = ({ title, items }) => {
 };
 
 const Navbar = () => {
+    const [drawerOpen, setDrawerOpen] = useState(false);
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("user"));
 
@@ -59,83 +64,115 @@ const Navbar = () => {
         navigate("/login");
     };
 
-    return (
-        <AppBar position="static" sx={{ backgroundColor: "#172744", color: "#e8e8e8", py: 2 }}>
-            <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                {/* Logo on the left */}
-                <Link to="/home" style={{ textDecoration: "none" }}>
-                    <Box sx={{ display: "flex", gap: "4px", alignItems: "center" }}>
-                        <img src={Logo} alt="logo" height="40" />
-                        <Typography style={{ color: "#CDC9CE", fontWeight: "600" }} >India</Typography>
-                    </Box>
-                </Link>
-                {/* Center nav items */}
-                <Box sx={{ display: "flex", gap: "1rem" }}>
-                    {/* <Dropdown
-                        title="Program"
-                        items={[
-                            { label: "Overview", to: "/program/overview" },
-                            { label: "Benefits", to: "/program/benefits" },
-                        ]}
-                    /> */}
-                    {/* <Dropdown
-                        title="Why Choose Us"
-                        items={[
-                            { label: "comparison", to: "/whychooseus" }
-                        ]}
-                    /> */}
-                    <Button component={Link} to="/whychooseus" color="inherit">
-                        Why Choose Us
-                    </Button>
+    const navItems = (
+        <>
+            <Button component={Link} to="/whychooseus" color="inherit">
+                Why Choose Us
+            </Button>
+            <Button component={Link} to="/productsServices" color="inherit">
+                Products & Services
+            </Button>
+            <Dropdown
+                title="Opps and Leads"
+                items={[
+                    { label: "Register Deal", to: "/home/opps/register" },
+                    { label: "View Registered Deals", to: "/home/opps/registered" },
+                    // { label: "View Opportunities", to: "/home/opps/opportunities" },
+                ]}
+            />
+            <Button component={Link} to="/technology" color="inherit">
+                Technology
+            </Button>
 
-                    {/* <Dropdown
-                        title="Sales"
-                        items={[
-                            { label: "Sales Toolkit", to: "/sales/toolkit" },
-                            { label: "Pipeline", to: "/sales/pipeline" },
-                        ]}
-                    /> */}
-                    <Button component={Link} to="/productsServices" color="inherit">
-                        Products & Services
-                    </Button>
-                    {/* <Dropdown
-                        title="Marketing"
-                        items={[
-                            { label: "Campaigns", to: "/marketing/campaigns" },
-                            { label: "Resources", to: "/marketing/resources" },
-                        ]}
-                    /> */}
-                    {/* <Dropdown
-                        title="Technical"
-                        items={[
-                            { label: "Docs", to: "/technical/docs" },
-                            { label: "Support", to: "/technical/support" },
-                        ]}
-                    /> */}
-                    <Dropdown
-                        title="Opps and Leads"
-                        items={[
-                            { label: "Register Deal", to: "/home/opps/register" },
-                            { label: "View Registered Deals", to: "/home/opps/registered" },
-                            { label: "View Opportunities", to: "/home/opps/opportunities" },
-                        ]}
-                    />
-                    <Button component={Link} to="/university" color="inherit">
-                        Partner University
-                    </Button>
-                    <Button component={Link} to="/assets" color="inherit">
-                        Assets
-                    </Button>
-                    {user && (
-                        <Box sx={{ ml: 2 }}>
-                            <Button color="inherit" onClick={handleLogout}>
-                                <LogoutIcon></LogoutIcon>
-                            </Button>
+            {user && (
+                <Button color="inherit" onClick={handleLogout}>
+                    <LogoutIcon />
+                </Button>
+            )}
+        </>
+    );
+
+    const drawerList = (
+        <Box
+            sx={{ width: 250, bgcolor: "#172744", height: "100%", color: "#e8e8e8" }}
+            role="presentation"
+            onClick={() => setDrawerOpen(false)}
+            onKeyDown={() => setDrawerOpen(false)}
+        >
+            <List>
+                <ListItem button component={Link} to="/whychooseus" sx={{ textDecoration: "none", color: "#e8e8e8" }}>
+                    <ListItemText primary="Why Choose Us" sx={{ color: "#e8e8e8" }} />
+                </ListItem>
+                <ListItem button component={Link} to="/productsServices" sx={{ textDecoration: "none", color: "#e8e8e8" }}>
+                    <ListItemText primary="Products & Services" sx={{ color: "#e8e8e8" }} />
+                </ListItem>
+                <Divider sx={{ bgcolor: "#1f2b4a" }} />
+                <ListItem button component={Link} to="/home/opps/register" sx={{ textDecoration: "none", color: "#e8e8e8" }}>
+                    <ListItemText primary="Register Deal" sx={{ color: "#e8e8e8" }} />
+                </ListItem>
+                <ListItem button component={Link} to="/home/opps/registered" sx={{ textDecoration: "none", color: "#e8e8e8" }}>
+                    <ListItemText primary="View Registered Deals" sx={{ color: "#e8e8e8" }} />
+                </ListItem>
+                <ListItem button component={Link} to="/home/opps/opportunities" sx={{ textDecoration: "none", color: "#e8e8e8" }}>
+                    <ListItemText primary="View Opportunities" sx={{ color: "#e8e8e8" }} />
+                </ListItem>
+                <Divider sx={{ bgcolor: "#1f2b4a" }} />
+                <ListItem button component={Link} to="/university" sx={{ textDecoration: "none", color: "#e8e8e8" }}>
+                    <ListItemText primary="Partner University" sx={{ color: "#e8e8e8" }} />
+                </ListItem>
+                <ListItem button component={Link} to="/assets" sx={{ textDecoration: "none", color: "#e8e8e8" }}>
+                    <ListItemText primary="Assets" sx={{ color: "#e8e8e8" }} />
+                </ListItem>
+                {user && (
+                    <>
+                        <Divider sx={{ bgcolor: "#1f2b4a" }} />
+                        <ListItem button onClick={handleLogout} sx={{ textDecoration: "none", color: "#e8e8e8" }}>
+                            <ListItemText primary="Logout" sx={{ color: "#e8e8e8" }} />
+                        </ListItem>
+                    </>
+                )}
+            </List>
+        </Box>
+    );
+
+    return (
+        <>
+            <AppBar position="static" sx={{ backgroundColor: "#172744", color: "#e8e8e8", py: 2 }}>
+                <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    {/* Logo */}
+                    <Link to="/home" style={{ textDecoration: "none" }}>
+                        <Box sx={{ display: "flex", gap: "4px", alignItems: "center" }}>
+                            <img src={Logo} alt="logo" height="40" />
+                            <Typography style={{ color: "#CDC9CE", fontWeight: "600" }}>India</Typography>
                         </Box>
-                    )}
-                </Box>
-            </Toolbar>
-        </AppBar>
+                    </Link>
+
+                    {/* Desktop Menu */}
+                    <Box sx={{ display: { xs: "none", md: "flex" }, gap: "1rem", alignItems: "center" }}>
+                        {navItems}
+                    </Box>
+
+                    {/* Mobile Hamburger Menu */}
+                    <IconButton
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ display: { xs: "flex", md: "none" } }}
+                        onClick={() => setDrawerOpen(true)}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </Toolbar>
+            </AppBar>
+
+            <Drawer
+                anchor="left"
+                open={drawerOpen}
+                onClose={() => setDrawerOpen(false)}
+            >
+                {drawerList}
+            </Drawer>
+        </>
     );
 };
 
